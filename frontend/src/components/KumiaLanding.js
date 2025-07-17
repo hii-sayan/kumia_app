@@ -370,10 +370,9 @@ const KumiaLanding = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection('que-es')}
-                className="px-8 py-4 border-2 border-white/30 rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
+                className="px-8 py-4 border-2 border-amber-400/50 rounded-full font-semibold text-lg text-amber-400 hover:bg-amber-400/10 transition-all duration-300 backdrop-blur-sm"
               >
-                Conocer más
+                Reservar llamada gratuita
               </motion.button>
             </div>
           </motion.div>
