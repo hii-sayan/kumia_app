@@ -158,8 +158,9 @@ const KumiaLanding = () => {
   const plans = [
     {
       name: "Essentials",
-      price: "$39",
+      price: "$149",
       period: "USD mensual",
+      setup: "$499",
       description: "Perfecto para comenzar tu transformación digital",
       features: [
         "Carta digital inteligente",
@@ -178,8 +179,9 @@ const KumiaLanding = () => {
     },
     {
       name: "Pro",
-      price: "$79", 
+      price: "$249", 
       period: "USD mensual",
+      setup: "$999",
       description: "Experiencia completa con branding personalizado",
       features: [
         "Todo lo de Essentials",
@@ -198,8 +200,9 @@ const KumiaLanding = () => {
     },
     {
       name: "Elite",
-      price: "$149",
+      price: "$349",
       period: "USD mensual", 
+      setup: "$1999",
       description: "La experiencia más premium con IA avanzada",
       features: [
         "Todo lo de Pro",
