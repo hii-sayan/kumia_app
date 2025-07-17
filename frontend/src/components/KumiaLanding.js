@@ -783,6 +783,10 @@ const KumiaLanding = () => {
                         <span className="text-4xl font-bold">{plan.price}</span>
                         <span className="text-gray-400 ml-2">{plan.period}</span>
                       </div>
+                      <div className="text-sm text-gray-300 mb-4">
+                        <span className="font-semibold">Setup único: </span>
+                        <span className="text-amber-400">{plan.setup}</span>
+                      </div>
                     </div>
 
                     <div className="space-y-3 mb-8">
