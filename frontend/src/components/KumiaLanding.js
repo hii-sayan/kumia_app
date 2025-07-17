@@ -346,7 +346,7 @@ const KumiaLanding = () => {
             <div
               key={index}
               className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-                index === currentImageIndex ? 'opacity-30' : 'opacity-0'
+                index === currentImageIndex ? 'opacity-70' : 'opacity-0'
               }`}
               style={{
                 backgroundImage: `url('${image}')`,
@@ -355,9 +355,9 @@ const KumiaLanding = () => {
             />
           ))}
           
-          {/* Overlay gradients */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
+          {/* Overlay gradients - adjusted for better image visibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
         </div>
 
         {/* Image indicators */}
