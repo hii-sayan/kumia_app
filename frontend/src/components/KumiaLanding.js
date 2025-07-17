@@ -25,12 +25,30 @@ import "../styles/KumiaLanding.css";
 const KumiaLanding = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Hero background images showcasing different restaurant types
+  const heroImages = [
+    "https://images.unsplash.com/photo-1647249893022-9287c83b8cc3", // Hotel/Premium dining
+    "https://images.unsplash.com/photo-1581934469832-1c14854646bf", // Casual dining
+    "https://images.unsplash.com/photo-1650894001076-f75ec81619c9", // Fine dining
+    "https://images.unsplash.com/photo-1599549211246-7065b775aa7b"  // Kitchen/Bar
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Auto-cycle through hero images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
