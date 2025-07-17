@@ -798,17 +798,27 @@ const KumiaLanding = () => {
                       ))}
                     </div>
 
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${
-                        plan.popular 
-                          ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-black hover:from-amber-400 hover:to-orange-500' 
-                          : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
-                      }`}
-                    >
-                      Solicitar este plan
-                    </motion.button>
+                    <div className="space-y-3">
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${
+                          plan.popular 
+                            ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-black hover:from-amber-400 hover:to-orange-500' 
+                            : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
+                        }`}
+                      >
+                        Solicitar este plan
+                      </motion.button>
+                      
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="w-full py-3 border-2 border-amber-400/50 rounded-full font-semibold text-amber-400 hover:bg-amber-400/10 transition-all duration-300"
+                      >
+                        Reservar llamada gratuita
+                      </motion.button>
+                    </div>
                   </div>
                 </div>
               </motion.div>
