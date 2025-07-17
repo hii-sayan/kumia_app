@@ -737,6 +737,54 @@ const KumiaLanding = () => {
         </div>
       </section>
 
+      {/* Free Call CTA Section */}
+      <section className="py-24 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-sm border border-gray-700/30 rounded-3xl p-8 md:p-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              ¿Listo para{" "}
+              <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+                descubrir tu potencial?
+              </span>
+            </h2>
+            
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Reserva una llamada gratuita de 30 minutos con nuestro equipo y descubre cómo KUMIA puede transformar tu negocio
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group bg-gradient-to-r from-amber-500 to-orange-600 px-8 py-4 rounded-full font-semibold text-lg text-black hover:from-amber-400 hover:to-orange-500 transition-all duration-300 shadow-2xl flex items-center space-x-2"
+              >
+                <span>Reservar llamada gratuita</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => scrollToSection('precios')}
+                className="px-8 py-4 border-2 border-white/30 rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all duration-300"
+              >
+                Ver planes y precios
+              </motion.button>
+            </div>
+            
+            <div className="mt-8 text-sm text-gray-400">
+              ✓ Sin compromiso   ✓ Análisis personalizado   ✓ Estrategia a medida
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section id="precios" className="py-24 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
