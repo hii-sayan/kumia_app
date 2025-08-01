@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ContactFormModal from "./ContactFormModal";
 import { motion } from "framer-motion";
 import { 
   ArrowRight, 
@@ -26,13 +27,21 @@ const KumiaLanding = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showContactModal, setShowContactModal] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showSignIn, setShowSignIn] = useState(false);
+  const [signInEmail, setSignInEmail] = useState("");
+  const [signInPassword, setSignInPassword] = useState("");
+  const [signInError, setSignInError] = useState("");
+  // Placeholder Calendly link
+  const calendlyUrl = "https://calendly.com/soporte-kumia/30min";
 
   // Hero background images showcasing different restaurant types
   const heroImages = [
-    "https://images.unsplash.com/photo-1647249893022-9287c83b8cc3", // Hotel/Premium dining
-    "https://images.unsplash.com/photo-1581934469832-1c14854646bf", // Casual dining
-    "https://images.unsplash.com/photo-1650894001076-f75ec81619c9", // Fine dining
-    "https://images.unsplash.com/photo-1599549211246-7065b775aa7b"  // Kitchen/Bar
+    require("./fogon.jpg"),
+    require("./Maido.jpg"),
+    require("./Maras-vino.jpg"),
+    require("./Maras.jpg")
   ];
 
   useEffect(() => {
@@ -96,7 +105,7 @@ const KumiaLanding = () => {
       icon: <Shield className="w-8 h-8" />
     },
     {
-      title: "Cocina Virtual",
+      title: "Dark Kitchen",
       description: "Optimiza tu delivery y take-away",
       benefits: ["Menú digital optimizado", "Reseñas con imagen", "Análisis de tendencias"],
       icon: <TrendingUp className="w-8 h-8" />
@@ -136,7 +145,7 @@ const KumiaLanding = () => {
     },
     {
       step: "06",
-      title: "Se guarda su historial y NFTs en su Wallet",
+      title: "Se guarda su historial y insignias digitales en su Wallet",
       description: "Construcción de reputación digital",
       icon: <Heart className="w-6 h-6" />
     }
@@ -174,27 +183,27 @@ const KumiaLanding = () => {
   ];
 
   const plans = [
-    {
-      name: "Essentials",
-      price: "$149",
-      period: "USD mensual",
-      setup: "$499",
-      description: "Perfecto para comenzar tu transformación digital",
-      features: [
-        "Carta digital inteligente",
-        "Reservas omnicanal",
-        "IA para consultas básicas",
-        "Feedback de texto",
-        "NFTs básicos",
-        "Wallet visual"
-      ],
-      nft: "Básico",
-      ai: true,
-      feedback: "Texto",
-      wallet: true,
-      popular: false,
-      gradient: "from-gray-900 to-gray-800"
-    },
+    // {
+    //   name: "Essentials",
+    //   price: "$149",
+    //   period: "USD mensual",
+    //   setup: "$499",
+    //   description: "Perfecto para comenzar tu transformación digital",
+    //   features: [
+    //     "Carta digital inteligente",
+    //     "Reservas omnicanal",
+    //     "IA para consultas básicas",
+    //     "Feedback de texto",
+    //     "insignias digitales básicos",
+    //     "Wallet visual"
+    //   ],
+    //   nft: "Básico",
+    //   ai: true,
+    //   feedback: "Texto",
+    //   wallet: true,
+    //   popular: false,
+    //   gradient: "from-blue-900 to-blue-800"
+    // },
     {
       name: "Pro",
       price: "$249", 
@@ -205,7 +214,7 @@ const KumiaLanding = () => {
         "Todo lo de Essentials",
         "Branding completo personalizado",
         "Feedback con imagen y video",
-        "NFTs dinámicos",
+        "insignias digitales dinámicos",
         "Analíticas avanzadas",
         "Soporte prioritario"
       ],
@@ -224,7 +233,7 @@ const KumiaLanding = () => {
       description: "La experiencia más premium con IA avanzada",
       features: [
         "Todo lo de Pro",
-        "NFTs coleccionables únicos",
+        "insignias digitales coleccionables únicos",
         "IA con Machine Learning",
         "UX personalizada por cliente",
         "Feedback con IA avanzada",
@@ -243,7 +252,7 @@ const KumiaLanding = () => {
     { name: "Inicio", href: "#hero" },
     { name: "Producto", href: "#que-es" },
     { name: "Beneficios", href: "#beneficios" },
-    { name: "Precios", href: "#precios" },
+    { name: "Planes", href: "#planes" },
     { name: "Casos de Éxito", href: "#casos" }
   ];
 
@@ -258,21 +267,21 @@ const KumiaLanding = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrollY > 50 ? 'bg-black/80 backdrop-blur-md' : 'bg-transparent'
-      }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+      <nav className="fixed top-2 left-1/2 transform -translate-x-1/2 z-50 w-[97vw] max-w-[1500px] transition-all duration-300">
+        <div className={`rounded-2xl shadow-xl border border-purple-900/30 bg-gradient-to-br from-gray-900/60 to-black/40 backdrop-blur-2xl px-4 sm:px-8 lg:px-14 mx-auto ${scrollY > 50 ? 'scale-100' : 'scale-105'} transition-all duration-300`} style={{
+          boxShadow: '0 6px 24px 0 rgba(80,60,120,0.12)',
+          borderTop: '2px solid #A78BFA',
+          borderBottom: '2px solid #6D28D9',
+        }}>
+          <div className="flex justify-between items-center h-12">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center space-x-2"
             >
-              <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-orange-500 rounded-lg flex items-center justify-center">
-                <span className="text-black font-bold text-lg">K</span>
-              </div>
+              <img src={require("./Kumia.png")} alt="KUMIA Logo" className="w-8 h-8 object-contain" style={{ background: 'none', borderRadius: 0 }} />
               <span className="text-xl font-bold bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-                KUMIA
+                KumIA
               </span>
             </motion.div>
 
@@ -293,8 +302,68 @@ const KumiaLanding = () => {
                 onClick={() => scrollToSection('cta-final')}
                 className="bg-gradient-to-r from-amber-500 to-orange-600 px-6 py-2 rounded-full font-semibold text-black hover:from-amber-400 hover:to-orange-500 transition-all duration-300 shadow-lg"
               >
-                Activar KUMIA
+                Solicitar una Demo gratuita
               </motion.button>
+              <button
+                className="ml-4 px-6 py-2 rounded-full font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 transition-all duration-300 shadow-lg"
+                onClick={() => setShowSignIn(true)}
+              >
+                Login
+              </button>
+      {/* Sign In Modal */}
+      {showSignIn && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-60 overflow-y-auto">
+          <div className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full text-center relative" style={{ minHeight: '350px', margin: '60px auto', top: 0, left: 0, right: 0, bottom: 0, position: 'relative' }}>
+            <button
+              onClick={() => setShowSignIn(false)}
+              className="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-2xl font-bold focus:outline-none"
+              aria-label="Cerrar"
+              tabIndex={0}
+            >
+              ×
+            </button>
+            <h2 className="text-2xl font-bold mb-4 text-black">Iniciar Sesión</h2>
+            <form
+              onSubmit={e => {
+                e.preventDefault();
+                if (!signInEmail || !signInPassword) {
+                  setSignInError("Por favor, completa ambos campos.");
+                  return;
+                }
+                setSignInError("");
+                setShowSignIn(false);
+                setSignInEmail("");
+                setSignInPassword("");
+              }}
+              className="space-y-4 w-full"
+            >
+              <input
+                type="email"
+                placeholder="Correo electrónico"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 text-black"
+                value={signInEmail}
+                onChange={e => setSignInEmail(e.target.value)}
+                required
+              />
+              <input
+                type="password"
+                placeholder="Contraseña"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 text-black"
+                value={signInPassword}
+                onChange={e => setSignInPassword(e.target.value)}
+                required
+              />
+              {signInError && <div className="text-red-500 text-sm mb-2">{signInError}</div>}
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 rounded-full hover:from-purple-500 hover:to-indigo-500 transition-all duration-300 shadow-lg"
+              >
+                Iniciar Sesión
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
             </div>
 
             {/* Mobile menu button */}
@@ -331,7 +400,7 @@ const KumiaLanding = () => {
                 onClick={() => scrollToSection('cta-final')}
                 className="w-full bg-gradient-to-r from-amber-500 to-orange-600 px-3 py-2 rounded-md font-semibold text-black hover:from-amber-400 hover:to-orange-500 transition-all duration-300 mt-2"
               >
-                Activar KUMIA
+                Activar KumIA
               </button>
             </div>
           </motion.div>
@@ -385,38 +454,38 @@ const KumiaLanding = () => {
             className="space-y-8"
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              Donde la{" "}
+              Lo que tu cliente vive en tu {" "}
               <span className="bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
-                experiencia
+                restaurante…
               </span>
               <br />
-              se convierte en{" "}
+              se convierte en una experiencia que recomienda y jamás  {" "}
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                capital
+                olvida.
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Activa tu restaurante inteligente con IA, recompensas y experiencias digitales que convierten cada visita en una oportunidad de crecimiento.
+              KumIA convierte cada visita en una historia. Cada comida en una oportunidad. Cada cliente en un fan que vuelve, recomienda y se siente premiado por hacerlo.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection('precios')}
+                onClick={() => setShowContactModal(true)}
                 className="group bg-gradient-to-r from-amber-500 to-orange-600 px-8 py-4 rounded-full font-semibold text-lg text-black hover:from-amber-400 hover:to-orange-500 transition-all duration-300 shadow-2xl flex items-center space-x-2"
               >
-                <span>Quiero activar KUMIA en mi negocio</span>
+                <span>Solicitar una Demo gratuita</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.button>
-              
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => window.open(calendlyUrl, '_blank')}
                 className="px-8 py-4 border-2 border-amber-400/50 rounded-full font-semibold text-lg text-amber-400 hover:bg-amber-400/10 transition-all duration-300 backdrop-blur-sm"
               >
-                Reservar llamada gratuita
+                Ver la experiencia del cliente
               </motion.button>
             </div>
           </motion.div>
@@ -452,7 +521,7 @@ const KumiaLanding = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               ¿Qué es{" "}
               <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-                KUMIA?
+                KumIA?
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -488,7 +557,7 @@ const KumiaLanding = () => {
               },
               {
                 title: "Sistema de Lealtad",
-                description: "Programa gamificado con NFTs, puntos y niveles de recompensa",
+                description: "Programa de recompensas con insignias digitales, puntos y niveles de recompensa",
                 icon: <Crown className="w-8 h-8" />,
                 color: "from-red-500 to-rose-500"
               },
@@ -537,7 +606,7 @@ const KumiaLanding = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Cada negocio es único. KUMIA se adapta a las necesidades específicas de tu industria.
+              Cada negocio es único. KumIA se adapta a las necesidades específicas de tu industria.
             </p>
           </motion.div>
 
@@ -589,8 +658,26 @@ const KumiaLanding = () => {
                 Cómo Funciona
               </span>
             </h2>
+            {/* Special 3-card row: Gratis/Disfrutas/Tecnología */}
+              <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 mt-10 mb-12">
+                {/* Card 1 */}
+                <div className="flex-1 bg-gradient-to-br from-[#231942] to-[#18122B] rounded-2xl shadow-lg p-6 text-center border border-purple-900/60 backdrop-blur-md">
+                  <span className="block text-2xl md:text-3xl font-bold text-purple-100 mb-2">Gratis para ti. Siempre.</span>
+                  <p className="text-purple-300 text-lg font-medium">Sin costo para el comensal</p>
+                </div>
+                {/* Card 2 */}
+                <div className="flex-1 bg-gradient-to-br from-[#231942] to-[#18122B] rounded-2xl shadow-lg p-6 text-center border border-purple-900/60 backdrop-blur-md">
+                  <span className="block text-2xl md:text-3xl font-bold text-purple-100 mb-2">Solo disfrutas. El restaurante cubre el resto.</span>
+                  <p className="text-purple-300 text-lg font-medium">La experiencia es cortesía del restaurante</p>
+                </div>
+                {/* Card 3 */}
+                <div className="flex-1 bg-gradient-to-br from-[#231942] to-[#18122B] rounded-2xl shadow-lg p-6 text-center border border-purple-900/60 backdrop-blur-md">
+                  <span className="block text-2xl md:text-3xl font-bold text-purple-100 mb-2">Tecnología cortesía de tu restaurante favorito.</span>
+                  <p className="text-purple-300 text-lg font-medium">Innovación pensada para ti</p>
+                </div>
+              </div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Un proceso simple y natural que transforma la experiencia de tus clientes
+              Para ti como comensal, KumIA siempre será GRATIS. Nuestra tecnología está financiada por los restaurantes que quieren darte mejores experiencias, recompensas automáticas y atención sin fricción.
             </p>
           </motion.div>
 
@@ -692,7 +779,7 @@ const KumiaLanding = () => {
                     "Descuentos exclusivos por nivel",
                     "Acceso prioritario a eventos",
                     "Recompensas personalizadas",
-                    "NFTs coleccionables únicos"
+                    "insignias digitales coleccionables únicos"
                   ].map((benefit, index) => (
                     <li key={index} className="flex items-center text-gray-300">
                       <CheckCircle className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" />
@@ -724,59 +811,40 @@ const KumiaLanding = () => {
         </div>
       </section>
 
-      {/* Success Cases */}
+      {/* Demo Video Section (replaces Casos de Éxito) */}
       <section id="casos" className="py-24 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
-                Casos de Éxito
+                Demo del Dashboard
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Resultados reales de negocios que ya transformaron su experiencia con KUMIA
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Descubre cómo funciona el panel de control de KumIA en acción. Mira el video para ver las principales funcionalidades y la experiencia de usuario.
             </p>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {successCases.map((case_, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-2xl"
-              >
-                <div className="relative h-64 bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden">
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-300"
-                    style={{ backgroundImage: `url(${case_.image})` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                  
-                  <div className="relative z-10 p-6 h-full flex flex-col justify-end">
-                    <div className="mb-4">
-                      <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text mb-1">
-                        {case_.metric}
-                      </div>
-                      <div className="text-lg text-white font-semibold">{case_.description}</div>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-xl font-semibold text-white mb-2">{case_.business}</h4>
-                      <p className="text-gray-300 text-sm">{case_.detail}</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+          <div className="flex justify-center items-center px-0">
+            <div className="flex justify-center items-center w-full">
+              <div className="w-full max-w-6xl rounded-3xl overflow-hidden shadow-2xl border-4 border-emerald-500/40 bg-black" style={{ minHeight: '650px', maxHeight: '95vh' }}>
+                {/* Replace the src below with your actual dashboard demo video URL or local file */}
+                <video
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  controls
+                  poster={require("./Kumia.png")}
+                  className="w-full h-full object-cover"
+                  style={{ minHeight: '650px', maxHeight: '95vh' }}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -799,7 +867,7 @@ const KumiaLanding = () => {
             </h2>
             
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Reserva una llamada gratuita de 30 minutos con nuestro equipo y descubre cómo KUMIA puede transformar tu negocio
+              Reserva una llamada gratuita de 30 minutos con nuestro equipo y descubre cómo KumIA puede transformar tu negocio
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -808,14 +876,14 @@ const KumiaLanding = () => {
                 whileTap={{ scale: 0.95 }}
                 className="group bg-gradient-to-r from-amber-500 to-orange-600 px-8 py-4 rounded-full font-semibold text-lg text-black hover:from-amber-400 hover:to-orange-500 transition-all duration-300 shadow-2xl flex items-center space-x-2"
               >
-                <span>Reservar llamada gratuita</span>
+                <span>Solicitar una Demo gratuita</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.button>
               
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection('precios')}
+                onClick={() => scrollToSection('Planes')}
                 className="px-8 py-4 border-2 border-white/30 rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all duration-300"
               >
                 Ver planes y precios
@@ -830,7 +898,7 @@ const KumiaLanding = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="precios" className="py-24 bg-gradient-to-b from-gray-900 to-black">
+      <section id="planes" className="py-24 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -849,7 +917,7 @@ const KumiaLanding = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-stretch md:mx-auto md:max-w-3xl">
             {plans.map((plan, index) => (
               <motion.div
                 key={index}
@@ -869,15 +937,28 @@ const KumiaLanding = () => {
                   <div className="h-full bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-sm rounded-2xl p-6">
                     <div className="text-center mb-6">
                       <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                      <p className="text-gray-300 text-sm mb-4">{plan.description}</p>
-                      <div className="mb-4">
-                        <span className="text-4xl font-bold">{plan.price}</span>
-                        <span className="text-gray-400 ml-2">{plan.period}</span>
-                      </div>
-                      <div className="text-sm text-gray-300 mb-4">
-                        <span className="font-semibold">Setup único: </span>
-                        <span className="text-amber-400">{plan.setup}</span>
-                      </div>
+                      <p className="text-gray-300 text-sm mb-4">
+                        {plan.description}
+                        <br />
+                        <span className="text-gray-400">
+                          {plan.price} {plan.period}
+                        </span>
+                      </p>
+                    <div className="mb-4">
+                      <span className="text-4xl font-bold">
+                        {(() => {
+                          const num = Number(plan.price.replace(/[^\d.]/g, ""));
+                          if (!isNaN(num)) {
+                            return `$${(num / 30).toFixed(2)} USD/día`;
+                          }
+                          return "-";
+                        })()}
+                      </span>
+                    </div>
+                    <div className="text-sm text-gray-300 mb-4">
+                      <span className="font-semibold">Setup único: </span>
+                      <span className="text-amber-400">{plan.setup}</span>
+                    </div>
                     </div>
 
                     <div className="space-y-3 mb-8">
@@ -893,21 +974,22 @@ const KumiaLanding = () => {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={() => setShowContactModal(true)}
                         className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${
                           plan.popular 
                             ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-black hover:from-amber-400 hover:to-orange-500' 
                             : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
                         }`}
                       >
-                        Solicitar este plan
+                        Solicitar una Demo gratuita
                       </motion.button>
-                      
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={() => window.open(calendlyUrl, '_blank')}
                         className="w-full py-3 border-2 border-amber-400/50 rounded-full font-semibold text-amber-400 hover:bg-amber-400/10 transition-all duration-300"
                       >
-                        Reservar llamada gratuita
+                        Ver la experiencia del cliente
                       </motion.button>
                     </div>
                   </div>
@@ -931,7 +1013,7 @@ const KumiaLanding = () => {
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               ¿Listo para activar tu{" "}
               <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-                experiencia KUMIA?
+                experiencia KumIA?
               </span>
             </h2>
             
@@ -943,18 +1025,19 @@ const KumiaLanding = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setShowContactModal(true)}
                 className="group bg-gradient-to-r from-amber-500 to-orange-600 px-8 py-4 rounded-full font-semibold text-lg text-black hover:from-amber-400 hover:to-orange-500 transition-all duration-300 shadow-2xl flex items-center space-x-2"
               >
-                <span>Inicia tu activación ahora</span>
+                <span>Solicitar una Demo gratuita</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.button>
-              
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => window.open(calendlyUrl, '_blank')}
                 className="px-8 py-4 border-2 border-amber-400/50 rounded-full font-semibold text-lg text-amber-400 hover:bg-amber-400/10 transition-all duration-300"
               >
-                Reservar llamada gratuita
+                Ver la experiencia del cliente
               </motion.button>
             </div>
           </motion.div>
@@ -962,28 +1045,44 @@ const KumiaLanding = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-b from-gray-900 to-black py-12 border-t border-gray-800/50">
+      <footer className="bg-gradient-to-b from-gray-900 to-black py-12 border-t-4 border-transparent" style={{
+        borderImage: 'linear-gradient(to right, #6D28D9 0%, #A78BFA 50%, #6D28D9 100%) 1',
+        borderTopWidth: '4px',
+        boxShadow: '0 -2px 24px 0 rgba(80, 60, 120, 0.18)'
+      }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-orange-500 rounded-lg flex items-center justify-center">
-                  <span className="text-black font-bold text-lg">K</span>
-                </div>
+                <img src={require("./Kumia.png")} alt="KUMIA Logo" className="w-8 h-8 rounded-lg object-contain bg-black" />
                 <span className="text-xl font-bold bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-                  KUMIA
+                  KumIA
                 </span>
               </div>
               <p className="text-gray-400 text-sm">
                 Transformando restaurantes con tecnología inteligente y experiencias premium.
               </p>
+              <div className="flex space-x-6 mt-4">
+                <a href="https://www.linkedin.com/company/kumia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-blue-500 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeWidth="2" d="M16 8a6 6 0 0 1 6 6v5h-4v-5a2 2 0 0 0-4 0v5h-4v-5a6 6 0 0 1 6-6Z"/><rect width="4" height="12" x="2" y="9" stroke="currentColor" strokeWidth="2" rx="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" strokeWidth="2"/></svg>
+                </a>
+                <a href="https://x.com/kumia" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="text-gray-400 hover:text-black transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeWidth="2" d="m4 4 16 16m0-16L4 20"/></svg>
+                </a>
+                <a href="Instagram.com/kumia.app" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-pink-500 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="5" stroke="currentColor" strokeWidth="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                </a>
+                <a href="mailto:soporte@kumia.net" aria-label="Email" className="text-gray-400 hover:text-amber-500 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" stroke="currentColor" strokeWidth="2"/><path stroke="currentColor" strokeWidth="2" d="m22 6-8.586 7.293a2 2 0 0 1-2.828 0L2 6"/></svg>
+                </a>
+              </div>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Producto</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Características</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Precios</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Planes</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Integraciones</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">API</a></li>
               </ul>
@@ -1012,7 +1111,7 @@ const KumiaLanding = () => {
 
           <div className="border-t border-gray-800/50 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 KUMIA. Todos los derechos reservados.
+              © 2024 KumIA. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
@@ -1025,6 +1124,27 @@ const KumiaLanding = () => {
           </div>
         </div>
       </footer>
+      {showContactModal && (
+        <ContactFormModal
+          isOpen={showContactModal}
+          onClose={() => setShowContactModal(false)}
+          onSuccess={() => setShowSuccess(true)}
+        />
+      )}
+      {showSuccess && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+          <div className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full text-center">
+            <h2 className="text-2xl font-bold mb-4 text-black">¡Gracias por tu interés!</h2>
+            <p className="text-gray-700 mb-4">Hemos recibido tu solicitud y nos pondremos en contacto contigo pronto.</p>
+            <button
+              onClick={() => setShowSuccess(false)}
+              className="mt-2 px-6 py-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-full font-semibold"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
