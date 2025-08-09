@@ -266,6 +266,7 @@ const KumiaLanding = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden">
+
       {/* Navigation */}
       <nav className="fixed top-2 left-1/2 transform -translate-x-1/2 z-50 w-[97vw] max-w-[1500px] transition-all duration-300">
         <div className={`rounded-2xl shadow-xl border border-purple-900/30 bg-gradient-to-br from-gray-900/60 to-black/40 backdrop-blur-2xl px-4 sm:px-8 lg:px-14 mx-auto ${scrollY > 50 ? 'scale-100' : 'scale-105'} transition-all duration-300`} style={{
@@ -310,10 +311,23 @@ const KumiaLanding = () => {
               >
                 Login
               </button>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-gray-300 hover:text-white p-2"
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
+          </div>
+        </div>
       {/* Sign In Modal */}
       {showSignIn && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-60 overflow-y-auto">
-          <div className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full text-center relative" style={{ minHeight: '350px', margin: '60px auto', top: 0, left: 0, right: 0, bottom: 0, position: 'relative' }}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+          <div className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full text-center relative" style={{ minHeight: '350px', marginTop: '800px' }}>
             <button
               onClick={() => setShowSignIn(false)}
               className="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-2xl font-bold focus:outline-none"
@@ -364,19 +378,6 @@ const KumiaLanding = () => {
           </div>
         </div>
       )}
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-300 hover:text-white p-2"
-              >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
-          </div>
-        </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
@@ -487,6 +488,17 @@ const KumiaLanding = () => {
               >
                 Ver la experiencia del cliente
               </motion.button>
+            </div>
+
+            {/* Google Cloud Security Line */}
+            <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mt-6">
+              <span className="text-lg md:text-xl text-gray-200 font-semibold text-center">
+                Construido sobre Google Cloud, KumIA garantiza seguridad y privacidad de nivel empresarial, para que puedas innovar con total confianza.
+              </span>
+            </div>
+            {/* Google Cloud Logo */}
+            <div className="flex justify-center mt-4">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Cloud" className="w-24 h-24 " style={{ background: 'none' }} />
             </div>
           </motion.div>
         </div>
@@ -898,6 +910,42 @@ const KumiaLanding = () => {
       </section>
 
       {/* Pricing Section */}
+      {/* Certifications & Security Section */}
+      <section id="certificaciones" className="py-16 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+                Certificaciones & Seguridad
+              </span>
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-6">
+              KumIA cumple con los más altos estándares internacionales de seguridad y privacidad para proteger tus datos y los de tus clientes.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mt-4">
+              <div className="flex flex-col items-center min-w-[170px]">
+                <img src={require('./certs/gdpr.jpeg')} alt="GDPR" className="w-32 h-32 object-contain mb-2 rounded-xl shadow-lg bg-white" />
+                <span className="text-base text-gray-200 font-semibold text-center">GDPR</span>
+              </div>
+              <div className="flex flex-col items-center min-w-[120px]">
+                <img src={require('./certs/google.jpeg')} alt="Google Cloud Platform" className="w-32 h-32 object-contain mb-2 rounded-xl shadow-lg bg-white" />
+                <span className="text-base text-gray-200 font-semibold text-center">Google Cloud Platform</span>
+              </div>
+              <div className="flex flex-col items-center min-w-[120px]">
+                <img src={require('./certs/iso27001.jpeg')} alt="ISO 27001" className="w-32 h-32 object-contain mb-2 rounded-xl shadow-lg bg-white" />
+                <span className="text-base text-gray-200 font-semibold text-center">ISO 27001</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      {/* Pricing Section */}
       <section id="planes" className="py-24 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -1000,6 +1048,22 @@ const KumiaLanding = () => {
         </div>
       </section>
 
+      {/* WhatsApp CTA Section */}
+      <section className="flex justify-center py-12 bg-gradient-to-b from-black to-gray-900">
+        <a
+          href="https://wa.me/+56956481380?text=Hola%20KumIA,%20quiero%20saber%20más%20sobre%20los%20planes%20y%20hablar%20con%20el%20Asistente%20AI."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-lg bg-gradient-to-r from-green-400 to-green-600 text-white shadow-xl hover:from-green-500 hover:to-green-700 transition-all duration-300"
+        >
+          {/* WhatsApp SVG Icon */}
+          <svg className="w-7 h-7" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.668 4.607 1.937 6.563L4 29l7.625-1.937A12.96 12.96 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22.917c-2.13 0-4.217-.563-6.042-1.625l-.43-.25-4.542 1.156 1.208-4.438-.28-.453A10.93 10.93 0 0 1 5.083 15c0-6.042 4.875-10.917 10.917-10.917S26.917 8.958 26.917 15 22.042 25.917 16 25.917zm5.354-7.354c-.292-.146-1.729-.854-1.996-.951-.267-.099-.461-.146-.655.146-.195.292-.751.951-.921 1.146-.17.195-.341.219-.633.073-.292-.146-1.233-.454-2.35-1.445-.868-.773-1.455-1.729-1.627-2.021-.171-.292-.018-.449.128-.595.131-.13.292-.341.438-.512.146-.171.195-.292.292-.487.097-.195.049-.366-.024-.512-.073-.146-.655-1.584-.897-2.168-.237-.571-.478-.494-.655-.504-.17-.009-.366-.011-.561-.011-.195 0-.512.073-.78.366-.267.292-1.02.997-1.02 2.429 0 1.432 1.046 2.815 1.192 3.009.146.195 2.061 3.151 5.001 4.292.7.302 1.245.482 1.67.616.701.224 1.34.192 1.844.117.563-.084 1.729-.707 1.974-1.39.244-.683.244-1.269.171-1.39-.073-.121-.267-.195-.561-.341z"/>
+          </svg>
+          Habla con nuestro Asistente AI por WhatsApp
+        </a>
+      </section>
+
       {/* Final CTA */}
       <section id="cta-final" className="py-24 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -1085,6 +1149,16 @@ const KumiaLanding = () => {
                 <li><a href="#" className="hover:text-white transition-colors">Planes</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Integraciones</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">API</a></li>
+                <li>
+                  <a
+                    href={require("./Política de Privacidad y Seguridad _ KumIA.pdf")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -1103,8 +1177,17 @@ const KumiaLanding = () => {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Centro de ayuda</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Documentación</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Estado del sistema</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Login clientes</a></li>
+                <li>
+                  <a
+                    href={require("./Kumia_google_compliance.pdf")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    Security & Privacy
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

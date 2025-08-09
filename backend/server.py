@@ -1,5 +1,4 @@
-from fastapi import FastAPI, APIRouter, Request, status
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, APIRouter
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -10,25 +9,6 @@ from pydantic import BaseModel, Field
 from typing import List
 import uuid
 from datetime import datetime
-from email_utils import send_contact_email
-
-# Create a router with the /api prefix
-api_router = APIRouter(prefix="/api")
-
-# Add your routes to the router instead of directly to app
-class ContactForm(BaseModel):
-    name: str
-    email: str
-    message: str
-
-@api_router.post("/contact")
-async def contact(form: ContactForm):
-    try:
-        send_contact_email(form.name, form.email, form.message)
-        return {"success": True, "message": "Mensaje enviado"}
-    except Exception as e:
-        logging.error(f"Error sending contact email: {e}")
-        return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content={"success": False, "message": "No se pudo enviar el mensaje"})
 
 
 ROOT_DIR = Path(__file__).parent
