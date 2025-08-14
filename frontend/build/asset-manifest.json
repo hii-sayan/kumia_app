@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2bda3373.css",
+    "main.js": "/static/js/main.c0b3c346.js",
+    "static/media/Kumia.png": "/static/media/Kumia.895ca08510c33ad60e92.png",
+    "static/media/Maido.jpg": "/static/media/Maido.35acd93f3bffc8d8fdcb.jpg",
+    "static/media/Maras.jpg": "/static/media/Maras.6feeaf129c6d0a49191d.jpg",
+    "static/media/fogon.jpg": "/static/media/fogon.475cefe1e45a8dae0319.jpg",
+    "static/media/gdpr.jpeg": "/static/media/gdpr.30de4aa621050f51eb2d.jpeg",
+    "static/media/Maras-vino.jpg": "/static/media/Maras-vino.a5393e8bd75d4b7e5773.jpg",
+    "static/media/Política de Privacidad y Seguridad _ KumIA.pdf": "/static/media/Política de Privacidad y Seguridad _ KumIA.952f8cfe8125f014d114.pdf",
+    "static/media/Kumia_google_compliance.pdf": "/static/media/Kumia_google_compliance.62bc2e60b9d3bfc7a5af.pdf",
+    "static/media/iso27001.jpeg": "/static/media/iso27001.0651aba2a013c0b75b5f.jpeg",
+    "static/media/google.jpeg": "/static/media/google.5798f01552d82038b20a.jpeg",
+    "index.html": "/index.html",
+    "main.2bda3373.css.map": "/static/css/main.2bda3373.css.map",
+    "main.c0b3c346.js.map": "/static/js/main.c0b3c346.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2bda3373.css",
+    "static/js/main.c0b3c346.js"
+  ]
+}

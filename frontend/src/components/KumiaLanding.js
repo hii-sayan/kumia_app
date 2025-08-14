@@ -75,38 +75,154 @@ const KumiaLanding = () => {
 
   const businessTypes = [
     {
-      title: "Restaurante Tradicional",
-      description: "Moderniza tu servicio con tecnología intuitiva",
+      title: "🍽️ RESTAURANTE TRADICIONAL/FAMILIAR",
+      description: (
+                  <>
+                    <div className="text-base text-gray-200 font-semibold mb-2">Tu Transformación:</div>
+                    <div className="text-left text-gray-300">
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>Clientes felices que no buscan meseros - ConsumerWebApp maneja todo</li>
+                        <li>Meseros súper eficientes - GarzónWebApp los convierte en expertos</li>
+                        <li>Administración sin estrés - Dashboard muestra todo automáticamente</li>
+                      </ul>
+                      <div className="font-semibold mt-3 mb-1">💰 Resultados Financieros:</div>
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>+60% satisfacción cliente (ya no esperan ni buscan meseros)</li>
+                        <li>+45% ticket promedio (IA sugiere perfectamente)</li>
+                        <li>-40% rotación de personal (meseros aman la tecnología)</li>
+                        <li>+$4,200/mes neto promedio comprobado</li>
+                      </ul>
+                      <div className="text-base text-gray-200 font-semibold mb-2">🎯 Caso Real: "Casa Roma pasó de 80 clientes/día a 180 clientes/día porque eliminamos todas las fricciones. Los clientes aman ordenar desde la mesa y los meseros aman no ser interrumpidos constantemente" - Mario, Dueño</div>
+                    </div>
+                  </>
+                ),
       benefits: ["Cartas digitales", "Gestión de reservas", "Feedback instantáneo"],
       icon: <Users className="w-8 h-8" />
     },
     {
-      title: "Restaurante Gourmet",
-      description: "Experiencia premium para comensales exigentes",
+      title: "🥂 RESTAURANTE GOURMET/PREMIUM",
+      description: (
+                  <>
+                    <div className="text-base text-gray-200 font-semibold mb-2">Tu Transformación:</div>
+                    <div className="text-left text-gray-300">
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>Experiencia VIP Automática - IA reconoce y trata clientes especiales</li>
+                        <li>Servicio Impecable - GarzónWebApp elimina cualquier error</li>
+                        <li>Reputación Blindada - Crisis Management protege tu imagen premium</li>
+                      </ul>
+                      <div className="font-semibold mt-3 mb-1">💰 Resultados Financieros:</div>
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>+80% clientes VIP (experiencia personalizada extrema)</li>
+                        <li>+70% maridajes vendidos (IA sommelier nunca falla)</li>
+                        <li>+$12,500/mes neto en experiencias premium</li>
+                        <li>5.0 estrellas promedio en todas las plataformas</li>
+                      </ul>
+                      <div className="text-base text-gray-200 font-semibold mb-2">🎯 Caso Real: "Nuestros clientes ahora nos recomiendan diciendo 'tienes que vivir la experiencia futurista'. Somos el único restaurante con tecnología así" - Elena, Chef Ejecutiva</div>
+                    </div>
+                  </>
+                ),
       benefits: ["Presentación elegante", "Recompensas exclusivas", "Análisis detallado"],
       icon: <Crown className="w-8 h-8" />
     },
     {
       title: "Bar / Pub",
-      description: "Ambiente social potenciado digitalmente",
+      description: (
+                  <>
+                    <div className="text-base text-gray-200 font-semibold mb-2">Tu Transformación:</div>
+                    <div className="text-left text-gray-300">
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>Ambiente Social Potenciado - Juegos en mesa crean diversión extra</li>
+                        <li>Eventos Automáticos - Sistema promociona y gestiona automáticamente</li>
+                        <li>Lealtad Nocturna - Gamificación adictiva para clientes nocturnos</li>
+                      </ul>
+                      <div className="font-semibold mt-3 mb-1">💰 Resultados Financieros:</div>
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>+90% tiempo de permanencia (gaming + entretenimiento</li>
+                        <li>+120% ventas de grupos (experiencia social única)</li>
+                        <li>+$6,800/mes neto en entretenimiento y eventos</li>
+                        <li>3x más eventos exitosos vs. promoción tradicional</li>
+                      </ul>
+                      <div className="text-base text-gray-200 font-semibold mb-2">🎯 Caso Real: "Los viernes están tan llenos que la gente reserva con 2 semanas de anticipación. Vienen por los juegos y se quedan por la experiencia completa" - Carlos, Pub Owner</div>
+                    </div>
+                  </>
+                ),
       benefits: ["Menú de bebidas interactivo", "Eventos especiales", "Lealtad gamificada"],
       icon: <Sparkles className="w-8 h-8" />
     },
     {
-      title: "Cafetería / Brunch",
-      description: "Convierte visitas matutinas en hábitos",
+      title: "☕ CAFETERÍA/BRUNCH",
+      description: (
+                  <>
+                    <div className="text-base text-gray-200 font-semibold mb-2">Tu Transformación:</div>
+                    <div className="text-left text-gray-300">
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>Pedidos Sin Cola - ConsumerWebApp elimina esperas matutinas</li>
+                        <li>Hábitos Automáticos - IA convierte visitantes en clientes diarios</li>
+                        <li>Eficiencia Rush Hour - GarzónWebApp optimiza horas pico</li>
+                      </ul>
+                      <div className="font-semibold mt-3 mb-1">💰 Resultados Financieros:</div>
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>+150% velocidad servicio (pedidos anticipados por app)</li>
+                        <li>+85% clientes regulares (gamificación de hábitos)</li>
+                        <li>+$3,200/mes neto optimizando mañanas</li>
+                        <li>-60% estrés operativo en horas rush</li>
+                      </ul>
+                      <div className="text-base text-gray-200 font-semibold mb-2">🎯 Caso Real: "Pasamos de 45 min de cola a 5 min máximo. Los clientes ordenan desde el auto y llegan a recoger. Revolucionamos el desayuno de la ciudad" - Ana, Café Owner</div>
+                    </div>
+                  </>
+                ),
       benefits: ["Pedidos rápidos", "Programas de lealtad", "Reseñas visuales"],
       icon: <Zap className="w-8 h-8" />
     },
     {
-      title: "Hotel con Restaurante",
-      description: "Integración perfecta para huéspedes y externos",
+      title: "🏨 HOTEL CON RESTAURANTE",
+      description: (
+                  <>
+                    <div className="text-base text-gray-200 font-semibold mb-2">Tu Transformación:</div>
+                    <div className="text-left text-gray-300">
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>Experiencia Unificada - Un solo sistema para huéspedes + externos</li>
+                        <li>Personalización Extrema - IA conoce preferencias de estadía</li>
+                        <li>Revenue Optimization - Maximiza ambos segmentos automáticamente</li>
+                      </ul>
+                      <div className="font-semibold mt-3 mb-1">💰 Resultados Financieros:</div>
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>+95% satisfacción huéspedes (experiencia tecnológica premium)</li>
+                        <li>+140% ventas restaurante (huéspedes + locales integrados)</li>
+                        <li>+$18,000/mes neto optimizando experiencia dual</li>
+                        <li>-50% quejas operativas (todo automatizado)</li>
+                      </ul>
+                      <div className="text-base text-gray-200 font-semibold mb-2">🎯 Caso Real: "Los huéspedes extienden su estadía solo para seguir usando nuestro restaurante inteligente. Es nuestra diferenciación #1" - Roberto, Hotel Manager</div>
+                    </div>
+                  </>
+                ),
       benefits: ["Reservas omnicanal", "Experiencia unificada", "Métricas completas"],
       icon: <Shield className="w-8 h-8" />
     },
     {
-      title: "Dark Kitchen",
-      description: "Optimiza tu delivery y take-away",
+      title: "🥡 DARK KITCHEN/DELIVERY",
+      
+      description: (
+                  <>
+                    <div className="text-base text-gray-200 font-semibold mb-2">s</div>
+                    <div className="text-base text-gray-200 font-semibold mb-2">Tu Transformación:</div>
+                    <div className="text-left text-gray-300">
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>Canal Directo Propio - ConsumerWebApp reduce dependencia de apps</li>
+                        <li>Eficiencia Máxima - GarzónWebApp optimiza preparación y empaque</li>
+                        <li>Cliente Conocido - Dashboard rastrea preferencias por deliverys</li>
+                      </ul>
+                      <div className="font-semibold mt-3 mb-1">💰 Resultados Financieros:</div>
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>+200% pedidos directos (0% comisión vs. apps)</li>
+                        <li>+75% clientes recurrentes (gamificación delivery)</li>
+                        <li>+$8,900/mes neto reduciendo comisiones</li>
+                        <li>-40% dependencia plataformas externas</li>
+                      </ul>
+                      <div className="text-base text-gray-200 font-semibold mb-2">🎯 Caso Real: "Construimos nuestra propia base de 2,000 clientes que ordenan directo. Ahorro $4,000/mes en comisiones y tengo relación directa con mis clientes" - Luis, Dark Kitchen</div>
+                    </div>
+                  </>
+                ),
       benefits: ["Menú digital optimizado", "Reseñas con imagen", "Análisis de tendencias"],
       icon: <TrendingUp className="w-8 h-8" />
     }
@@ -115,40 +231,79 @@ const KumiaLanding = () => {
   const howItWorks = [
     {
       step: "01",
-      title: "Escanea QR o entra por link",
-      description: "Acceso instantáneo sin apps adicionales",
+      title: " 📅 FASE 1: CONFIGURACIÓN EXPLOSIVA (Semana 1)",
+      description: (
+                  <>
+                    <div className="text-base text-gray-200 font-semibold mb-2">Tu Transformación:</div>
+                    <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>✅ Configuración completa del ecosistema (Dashboard + ConsumerWebApp + GarzónWebApp)</li>
+                        <li>✅ Entrenamiento de 12 Agentes IA con tu menú, precios y marca específica</li>
+                        <li>✅ Capacitación completa de tu equipo - Meseros se vuelven súper eficientes</li>
+                        <li>✅ Integración con redes sociales - Facebook, Instagram, WhatsApp automático</li>
+                        <li>✅ Testing completo - Todo funciona perfecto antes del lanzamiento</li>
+                      </ul>
+                      <div className="text-base text-gray-200 font-semibold mb-2">Tu resultado: Sistema funcionando sin que muevas un dedo</div>
+                    
+                  </>
+                ),
       icon: <Smartphone className="w-6 h-6" />
     },
     {
       step: "02", 
-      title: "Accede a la carta digital o hace una reserva",
-      description: "Navegación intuitiva y diseño atractivo",
+      title: "🚀 FASE 2: LANZAMIENTO IMPACTANTE (Semana 2-3) ",
+      description: (
+                  <>
+                    <div className="text-base text-gray-200 font-semibold mb-2">Tus clientes quedan IMPACTADOS
+Lo que experimentan automáticamente:</div>
+                    <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>🤖 Mesa inteligente: Ordenan directo a tu ERP sin buscar ni esperar</li>
+                        <li>💎 Experiencia VIP: IA los reconoce y personaliza todo automáticamente</li>
+                        <li>🎮 Gamificación adictiva: Ganan puntos, insignias, recompensas por cada visita</li>
+                        <li>⚡ Servicio súper rápido: GarzónWebApp hace tus meseros súper eficientes</li>
+                        <li>📱 Comunicación perfecta: Llaman al garzón desde la app, sin gritar o buscarlo o esperar y esperar…</li>
+                      </ul>
+                      <div className="text-base text-gray-200 font-semibold mb-2">Tu resultado: Clientes enamorados recomendando tu restaurante como "el del futuro"</div>
+                  </>
+                ),
       icon: <Calendar className="w-6 h-6" />
     },
     {
       step: "03",
-      title: "El agente AI responde preguntas",
-      description: "Asistencia inteligente 24/7",
+      title: "💰 FASE 3: MULTIPLICAS GANANCIAS (Mes 1 en adelante) El dinero extra empieza a fluir automáticamente",
+      description: (
+                  <>
+                    <div className="text-base text-gray-200 font-semibold mb-2">Tu nuevo flujo de ingresos:</div>
+                    <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>+$2,400/mes: Upselling IA sugiere complementos perfectos (35% más ticket promedio)</li>
+                        <li>+$1,800/mes: Respuesta automática a reseñas trae clientes perdidos de vuelta</li>
+                        <li>+$1,200/mes: Eficiencia operativa - mesas rotan 40% más rápido</li>
+                        <li>+$900/mes: Programa lealtad convierte visitas casuales en clientes frecuentes</li>
+                        <li>-$600/mes: Ahorras en marketing porque clientes se auto-promocionan</li>
+                      </ul>
+                      <div className="text-base text-gray-200 font-semibold mb-2">TU GANANCIA NETA: +$5,700/mes TU INVERSIÓN: -$399/mes
+TU BENEFICIO REAL: +$5,301/mes</div>
+                  </>
+                ),
       icon: <MessageSquare className="w-6 h-6" />
     },
-    {
-      step: "04",
-      title: "El cliente ordena y paga (opcional)",
-      description: "Proceso fluido y seguro",
-      icon: <DollarSign className="w-6 h-6" />
-    },
-    {
-      step: "05",
-      title: "Al finalizar, deja feedback y recibe recompensas",
-      description: "Gamificación que genera lealtad",
-      icon: <Gift className="w-6 h-6" />
-    },
-    {
-      step: "06",
-      title: "Se guarda su historial y insignias digitales en su Wallet",
-      description: "Construcción de reputación digital",
-      icon: <Heart className="w-6 h-6" />
-    }
+    // {
+    //   step: "04",
+    //   title: "El cliente ordena y paga (opcional)",
+    //   description: "Proceso fluido y seguro",
+    //   icon: <DollarSign className="w-6 h-6" />
+    // },
+    // {
+    //   step: "05",
+    //   title: "Al finalizar, deja feedback y recibe recompensas",
+    //   description: "Gamificación que genera lealtad",
+    //   icon: <Gift className="w-6 h-6" />
+    // },
+    // {
+    //   step: "06",
+    //   title: "Se guarda su historial y insignias digitales en su Wallet",
+    //   description: "Construcción de reputación digital",
+    //   icon: <Heart className="w-6 h-6" />
+    // }
   ];
 
   const successCases = [
@@ -300,10 +455,10 @@ const KumiaLanding = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection('cta-final')}
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdLAPkQv4xZrMixvLZB7rZg2Dxc-Q7XVizT46sWJbRLiEMqtw/viewform?usp=header', '_blank')}
                 className="bg-gradient-to-r from-amber-500 to-orange-600 px-6 py-2 rounded-full font-semibold text-black hover:from-amber-400 hover:to-orange-500 transition-all duration-300 shadow-lg"
               >
-                Solicitar una Demo gratuita
+                Empezar 7 dias grátis
               </motion.button>
               <button
                 className="ml-4 px-6 py-2 rounded-full font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 transition-all duration-300 shadow-lg"
@@ -447,7 +602,7 @@ const KumiaLanding = () => {
           </div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -467,17 +622,17 @@ const KumiaLanding = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              KumIA convierte cada visita en una historia. Cada comida en una oportunidad. Cada cliente en un fan que vuelve, recomienda y se siente premiado por hacerlo.
+              KumIA convierte cada visita en una historia. <br/>Cada comida en una oportunidad.<br/> Cada cliente en un fan que vuelve, recomienda y se siente premiado por hacerlo.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setShowContactModal(true)}
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdLAPkQv4xZrMixvLZB7rZg2Dxc-Q7XVizT46sWJbRLiEMqtw/viewform?usp=header', '_blank')}
                 className="group bg-gradient-to-r from-amber-500 to-orange-600 px-8 py-4 rounded-full font-semibold text-lg text-black hover:from-amber-400 hover:to-orange-500 transition-all duration-300 shadow-2xl flex items-center space-x-2"
               >
-                <span>Solicitar una Demo gratuita</span>
+                <span>Empezar 7 dias grátis</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.button>
               <motion.button
@@ -498,7 +653,7 @@ const KumiaLanding = () => {
             </div>
             {/* Google Cloud Logo */}
             <div className="flex justify-center mt-4">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Cloud" className="w-24 h-24 " style={{ background: 'none' }} />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Cloud" className="w-24 h-24 -mb-9 md:mb-12" style={{ background: 'none' }} />
             </div>
           </motion.div>
         </div>
@@ -508,7 +663,7 @@ const KumiaLanding = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-4 left-1/2 transform -translate-x-1/2"
         >
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
             <motion.div
@@ -531,54 +686,136 @@ const KumiaLanding = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              ¿Qué es{" "}
+              ¿Qué Pasaría Si Tu Restaurante Fuera el Único Con Tecnología del{" "}
               <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-                KumIA?
+                Futuro?
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Una solución modular completa que transforma tu negocio gastronómico en una experiencia digital inteligente
+              KumIA es el primer ECOSISTEMA GASTRONÓMICO INTELIGENTE que transforma completamente cómo tus clientes viven tu restaurante y cómo tú administras tu negocio.<br/>NO ES SOLO UN SOFTWARE - ES UNA REVOLUCIÓN COMPLETA.<br/>Transforma experiencias en capital, fidelidad cuantificable y crecimiento sostenido utilizando Inteligencia Artificial, Automatizaciones, Marketing, Gamificación, Reseñas, Pagos, optimiza la experiencia con tu cliente, optimiza tus procesos operativos, aumenta tu ticket promedio y fideliza a tus clientes.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Carta Digital Inteligente",
-                description: "Menús interactivos que se adaptan y sugieren opciones personalizadas",
+                title: "🏢 KUMIA DASHBOARD - EL CONTROL TOTAL",
+                description: (
+                  <>
+                    <div className="text-base text-gray-200 font-semibold mb-2">📊 Inteligencia de Negocio:</div>
+                    <div className="text-left text-gray-300">
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>Todo en Tiempo Real - Ventas, clientes, inventario, personal</li>
+                        <li>12 Agentes IA - Trabajando 24/7 en segundo plano</li>
+                        <li>Predicciones Precisas - Demanda, staffing optimizado</li>
+                        <li>ROI por Acción - Ve exactamente qué genera más dinero</li>
+                        <li>Analiza a tus competidores cercanos</li>
+                      </ul>
+                      <div className="font-semibold mt-3 mb-1">🎮 Gamificación Total:</div>
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>Programa de Lealtad, clientes adictos a volver y recomendar</li>
+                        <li>Sistemas de Recompensas - Por equipo e individual</li>
+                        <li>Competencias Internas - Meseros motivados por resultados</li>
+                        <li>Challenges Semanales - Metas que emocionan a todos</li>
+                      </ul>
+                      <div className="font-semibold mt-3 mb-1">🚀 Automatización Inteligente:</div>
+                      <ul className="list-disc list-inside ml-4">
+                        <li>Genera Contenido, maneja redes sociales, crea promociones</li>
+                        <li>Gestión de feedback en redes sociales</li>
+                        <li>Segmentación inteligente, Push Notifications, Campañas A/B Test.</li>
+                        <li>Creación de campañas personalizadas</li>
+                      </ul>
+                    </div>
+                  </>
+                ),
                 icon: <Smartphone className="w-8 h-8" />,
                 color: "from-blue-500 to-cyan-500"
               },
               {
-                title: "Reservas Omnicanal",
-                description: "Gestión unificada de reservas desde cualquier plataforma",
+                title: "📱 CONSUMER WEBAPP - LA MESA INTELIGENTE. ",
+                description: (
+                  <>
+                    <div className="text-base text-gray-200 font-semibold mb-2">TTu cliente ya no necesita buscar al mesero ni esperar:</div>
+                    <div className="text-left text-gray-300">
+                      <div className="font-semibold mt-2 mb-1"> 🍽️ Experiencia de Mesa Revolucionaria:</div>
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>Pedidos instantáneos desde su mesa</li>
+                        <li>Asistente IA que sugiere, responde y acompaña durante toda la comida</li>
+                        <li>Notificación Garzón Digital, Un toque y aparece, sin gritar ni buscar</li>
+                        <li>Pagos Inteligentes, division de cuenta, propina personalizada</li>
+                        <li>Gaming Social juega mientras esperas tu comida</li>
+                      </ul>
+                      <div className="font-semibold mt-3 mb-1">💳 Wallet & Recompensas Gamificado:</div>
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>Acción =  Recompensa (Comer, recomendar, reseñar, jugar = recompensas)</li>
+                        <li>Canje Inteligente - IA sugiere mejores canjes según historial</li>
+                        <li>Propinas Digitales - Gratifica directamente a tu mesero favorito</li>
+                        <li>Referidos Premium - Trae amigos y ambos ganan</li>
+                      </ul>
+                      <div className="font-semibold mt-3 mb-1">⭐ Feedback Instantáneo:</div>
+                      <ul className="list-disc list-inside ml-4">
+                        <li>Reseñas en Tiempo Real evalúa tu experiencia</li>
+                        <li>IA Responde Inmediato, Soluciona problemas antes que se vayan</li>
+                        <li>Recuerda todo para su próxima visita</li>
+                      </ul>
+                    </div>
+                  </>
+                ),
                 icon: <Calendar className="w-8 h-8" />,
                 color: "from-green-500 to-emerald-500"
               },
               {
-                title: "IA para Sugerencias",
-                description: "Asistente virtual que responde dudas y recomienda platos",
+                title: "👨‍🍳 GARZÓN WEBAPP - EL MESERO DEL FUTURO",
+                description: (
+                  <>
+                    <div className="text-base text-gray-200 font-semibold mb-2">Tus meseros se convierten en superhéroes del servicio:</div>
+                    <div className="text-left text-gray-300">
+                      <div className="font-semibold mt-2 mb-1"> 🎯 Inteligencia de Mesa:</div>
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>Dashboard Personal - Ve todo lo que ordena cada mesa en tiempo real</li>
+                        <li>Alertas IA - "Mesa 7 necesita atención" / "Cliente VIP llegó"</li>
+                        <li>Perfil de Cliente - Historial, preferencias, alergias automático</li>
+                        <li>Upselling Inteligente - IA sugiere exactamente qué ofrecer y cuándo</li>
+                      </ul>
+                      <div className="font-semibold mt-3 mb-1">⚡ Eficiencia Inteligente:</div>
+                      <ul className="list-disc list-inside ml-4 mb-2">
+                        <li>Pedidos Automáticos - Cliente ordena, aparece en su tablet instant</li>
+                        <li>Comunicación Directa - Cliente solicita algo, notificación inmediata</li>
+                        <li>Pedidos desde su app directo al ERP, no mas digitación manual ida y vuelta.</li>
+                        <li>Optimización de Recorrido - IA optimiza sus movimientos por eficiencia</li>
+                        <li>Métricas Personales - Ve su rendimiento, tips, y mejores mesas</li>
+                      </ul>
+                      <div className="font-semibold mt-3 mb-1">💰 Maximización de Ingresos:</div>
+                      <ul className="list-disc list-inside ml-4">
+                        <li>Closer IA, optimiza a tus colaboradores con las mejores técnicas de venta</li>
+                        <li>Gestión de Propinas - Sistema transparente y justo</li>
+                        <li>Rankings Gamificados - Competencia sana entre meseros</li>
+                        <li>Bonos Inteligentes - Recompensas por rendimiento excepcional</li>
+                      </ul>
+                    </div>
+                  </>
+                ),
                 icon: <MessageSquare className="w-8 h-8" />,
                 color: "from-purple-500 to-pink-500"
               },
-              {
-                title: "Feedback con Recompensas",
-                description: "Sistema de reseñas gamificado que incentiva la participación",
-                icon: <Gift className="w-8 h-8" />,
-                color: "from-amber-500 to-orange-500"
-              },
-              {
-                title: "Sistema de Lealtad",
-                description: "Programa de recompensas con insignias digitales, puntos y niveles de recompensa",
-                icon: <Crown className="w-8 h-8" />,
-                color: "from-red-500 to-rose-500"
-              },
-              {
-                title: "Wallet Visual",
-                description: "Billetera digital donde los clientes guardan sus logros y recompensas",
-                icon: <Heart className="w-8 h-8" />,
-                color: "from-indigo-500 to-purple-500"
-              }
+              // {
+              //   title: "Feedback con Recompensas",
+              //   description: "Sistema de reseñas gamificado que incentiva la participación",
+              //   icon: <Gift className="w-8 h-8" />,
+              //   color: "from-amber-500 to-orange-500"
+              // },
+              // {
+              //   title: "Sistema de Lealtad",
+              //   description: "Programa de recompensas con insignias digitales, puntos y niveles de recompensa",
+              //   icon: <Crown className="w-8 h-8" />,
+              //   color: "from-red-500 to-rose-500"
+              // },
+              // {
+              //   title: "Wallet Visual",
+              //   description: "Billetera digital donde los clientes guardan sus logros y recompensas",
+              //   icon: <Heart className="w-8 h-8" />,
+              //   color: "from-indigo-500 to-purple-500"
+              // }
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -605,20 +842,20 @@ const KumiaLanding = () => {
       <section id="beneficios" className="py-24 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 40 }}ƒ
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Beneficios por{" "}
+              Cada Industria Gastronómica Necesita{" "}
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Tipo de Negocio
+                Su Propia Revolución
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Cada negocio es único. KumIA se adapta a las necesidades específicas de tu industria.
+              El ecosistema KumIA se adapta específicamente a tu modelo de negocio para crear ventajas competitivas imposibles de copiar
             </p>
           </motion.div>
 
@@ -667,29 +904,30 @@ const KumiaLanding = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
-                Cómo Funciona
+                Cómo KumIA Multiplica Tus Ganancias en 3 Simples Pasos
               </span>
             </h2>
-            {/* Special 3-card row: Gratis/Disfrutas/Tecnología */}
+            {/* Special 3-card row: Gratis/Disfrutas/Tecnología
               <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 mt-10 mb-12">
                 {/* Card 1 */}
-                <div className="flex-1 bg-gradient-to-br from-[#231942] to-[#18122B] rounded-2xl shadow-lg p-6 text-center border border-purple-900/60 backdrop-blur-md">
+                {/* <div className="flex-1 bg-gradient-to-br from-[#231942] to-[#18122B] rounded-2xl shadow-lg p-6 text-center border border-purple-900/60 backdrop-blur-md">
                   <span className="block text-2xl md:text-3xl font-bold text-purple-100 mb-2">Gratis para ti. Siempre.</span>
                   <p className="text-purple-300 text-lg font-medium">Sin costo para el comensal</p>
-                </div>
+                </div> */}
                 {/* Card 2 */}
-                <div className="flex-1 bg-gradient-to-br from-[#231942] to-[#18122B] rounded-2xl shadow-lg p-6 text-center border border-purple-900/60 backdrop-blur-md">
+                {/* <div className="flex-1 bg-gradient-to-br from-[#231942] to-[#18122B] rounded-2xl shadow-lg p-6 text-center border border-purple-900/60 backdrop-blur-md">
                   <span className="block text-2xl md:text-3xl font-bold text-purple-100 mb-2">Solo disfrutas. El restaurante cubre el resto.</span>
                   <p className="text-purple-300 text-lg font-medium">La experiencia es cortesía del restaurante</p>
-                </div>
+                </div> */}
                 {/* Card 3 */}
-                <div className="flex-1 bg-gradient-to-br from-[#231942] to-[#18122B] rounded-2xl shadow-lg p-6 text-center border border-purple-900/60 backdrop-blur-md">
+                {/* <div className="flex-1 bg-gradient-to-br from-[#231942] to-[#18122B] rounded-2xl shadow-lg p-6 text-center border border-purple-900/60 backdrop-blur-md">
                   <span className="block text-2xl md:text-3xl font-bold text-purple-100 mb-2">Tecnología cortesía de tu restaurante favorito.</span>
                   <p className="text-purple-300 text-lg font-medium">Innovación pensada para ti</p>
                 </div>
-              </div>
+              </div>  */}
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Para ti como comensal, KumIA siempre será GRATIS. Nuestra tecnología está financiada por los restaurantes que quieren darte mejores experiencias, recompensas automáticas y atención sin fricción.
+              No necesitas ser un experto en tecnología. Nosotros configuramos todo, tú solo cobras más dinero cada mes.
+🎯 LAS 3 FASES DE TRANSFORMACIÓN:
             </p>
           </motion.div>
 
@@ -722,6 +960,97 @@ const KumiaLanding = () => {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Roadmap Section */}
+      <section id="roadmap" className="py-24 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">📊 PROCESO DETALLADO SEMANA A SEMANA:</span>
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Card 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 h-full flex flex-col justify-between"
+            >
+              <h3 className="text-xl font-semibold mb-3">SEMANA 1 - "Setup Invisible"</h3>
+              <ul className="list-disc list-inside text-left text-gray-300 mb-4">
+                <li>Día 1-2: Configuración técnica completa</li>
+                <li>Día 3-4: Entrenamiento IA con tu restaurante específico</li>
+                <li>Día 5-6: Capacitación equipo (2 horas máximo)</li>
+                <li>Día 7: Testing y ajustes finales</li>
+              </ul>
+              <div className="text-sm text-gray-400 mt-auto">
+                Tu trabajo: <span className="font-bold text-amber-400">0 horas</span> | Nuestro trabajo: <span className="font-bold text-green-400">40 horas</span>
+              </div>
+            </motion.div>
+            {/* Card 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 h-full flex flex-col justify-between"
+            >
+              <h3 className="text-xl font-semibold mb-3">SEMANA 2 - "Soft Launch"</h3>
+              <ul className="list-disc list-inside text-left text-gray-300 mb-4">
+                <li>Día 8-10: Lanzamiento suave con clientes VIP</li>
+                <li>Día 11-12: Ajustes basados en feedback real</li>
+                <li>Día 13-14: Preparación para lanzamiento total</li>
+              </ul>
+              <div className="text-sm text-gray-400 mt-auto">
+                Tu trabajo: <span className="font-bold text-amber-400">30 min/día supervisión</span> | Resultado: <span className="font-bold text-green-400">Clientes wow</span>
+              </div>
+            </motion.div>
+            {/* Card 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 h-full flex flex-col justify-between"
+            >
+              <h3 className="text-xl font-semibold mb-3">SEMANA 3 - "Go Live Total"</h3>
+              <ul className="list-disc list-inside text-left text-gray-300 mb-4">
+                <li>Día 15: Lanzamiento oficial completo</li>
+                <li>Día 16-21: Monitoreo y optimización continua</li>
+              </ul>
+              <div className="text-sm text-gray-400 mt-auto">
+                Tu trabajo: <span className="font-bold text-amber-400">Normal operations</span> | Resultado: <span className="font-bold text-green-400">Dinero extra fluyendo</span>
+              </div>
+            </motion.div>
+            {/* Card 4 */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 h-full flex flex-col justify-between"
+            >
+              <h3 className="text-xl font-semibold mb-3">MES 2 EN ADELANTE - "Piloto Automático"</h3>
+              <ul className="list-disc list-inside text-left text-gray-300 mb-4">
+                <li>12 Agentes IA trabajando 24/7</li>
+                <li>Sistema auto-optimizándose</li>
+                <li>Ganancias creciendo mensualmente</li>
+              </ul>
+              <div className="text-sm text-gray-400 mt-auto">
+                Tu trabajo: <span className="font-bold text-amber-400">Cobrar más dinero</span> | Nuestro trabajo: <span className="font-bold text-green-400">Optimización continua</span>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -886,9 +1215,10 @@ const KumiaLanding = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdLAPkQv4xZrMixvLZB7rZg2Dxc-Q7XVizT46sWJbRLiEMqtw/viewform?usp=header', '_blank')}
                 className="group bg-gradient-to-r from-amber-500 to-orange-600 px-8 py-4 rounded-full font-semibold text-lg text-black hover:from-amber-400 hover:to-orange-500 transition-all duration-300 shadow-2xl flex items-center space-x-2"
               >
-                <span>Solicitar una Demo gratuita</span>
+                <span>Empezar 7 dias grátis</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.button>
               
@@ -957,11 +1287,11 @@ const KumiaLanding = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-                Planes y Precios
+                Elige Tu Nivel de Multiplicación de Ganancias
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Elige el plan perfecto para tu negocio. Comienza tu transformación digital hoy.
+              Cada plan está diseñado para generar 10x su costo en ganancias adicionales.
             </p>
           </motion.div>
 
@@ -1022,14 +1352,14 @@ const KumiaLanding = () => {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() => setShowContactModal(true)}
+                        onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdLAPkQv4xZrMixvLZB7rZg2Dxc-Q7XVizT46sWJbRLiEMqtw/viewform?usp=header', '_blank')}
                         className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${
                           plan.popular 
                             ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-black hover:from-amber-400 hover:to-orange-500' 
                             : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
                         }`}
                       >
-                        Solicitar una Demo gratuita
+                        Empezar 7 dias grátis
                       </motion.button>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
@@ -1089,10 +1419,10 @@ const KumiaLanding = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setShowContactModal(true)}
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdLAPkQv4xZrMixvLZB7rZg2Dxc-Q7XVizT46sWJbRLiEMqtw/viewform?usp=header', '_blank')}
                 className="group bg-gradient-to-r from-amber-500 to-orange-600 px-8 py-4 rounded-full font-semibold text-lg text-black hover:from-amber-400 hover:to-orange-500 transition-all duration-300 shadow-2xl flex items-center space-x-2"
               >
-                <span>Solicitar una Demo gratuita</span>
+                <span>Empezar 7 dias grátis</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.button>
               <motion.button
